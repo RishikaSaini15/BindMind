@@ -1,4 +1,4 @@
-## BindMind: Online Yoga Learning management System(ELMS)
+## BindMind: Online Yoga Learning management System(ELMS) <img src="/screenshots/logo.png" width="64" height="64">
 BindMind is a software application for the administration, documentation, tracking, reporting, and delivery of yoga learning courses and certification programs. BindMind is focused on online learning delivery but support a range of uses, acting as a platform for online content, including courses, both asynchronous and synchronous based. It show cases the following:
 1. Courses
 2. Student Dashboard
@@ -13,28 +13,6 @@ This product came as a result of users asking for a material dashboard after we 
 Material Dashboard comes with 5 color filter choices for both the sidebar and the card headers (blue, green, orange, red and purple) and an option to have a background image on the sidebar.
 
 Material Dashboard uses a framework built by our friend [Federico - Bootstrap Material Design](http://fezvrasta.github.io/bootstrap-material-design/), who did an amazing job creating the backbone for the material effects, animations, ripples and transitions. Big thanks to his team for the effort and forward thinking they put into it.
-
-## Project Screenshots
-**Index/Main Page**
-![Main Screen](/screenshots/main.jpg)
-
-**Login Page**
-![Login Screen](/screenshots/login.jpg)
-
-**Dashboard/My Courses**
-![My Courses Screen](/screenshots/mycourses.jpg)
-
-**Dashboard/Messages**
-![Messages Screen](/screenshots/messages.png)
-
-**Dashboard/Discussions**
-![Discussions Screen](/screenshots/discussion.jpg)
-
-**Dashboard/User Profile**
-![User Profile Screen](/screenshots/profile.jpg)
-
-**Dashboard/Instructor**
-![Instructor Screen](/screenshots/Instructor.jpg)
 
 ## Terminal Commands
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0 and angular 4.x.
@@ -60,6 +38,28 @@ Run `Server Side Main class` for a dev server. Navigate to `http://localhost:808
 Run `gradlew clean build`
 java -Djava.security.egd=file:/dev/./urandom -jar app.jar
 
+## Project Screenshots
+**Index/Main Page**
+![Main Screen](/screenshots/main.jpg)
+
+**Login Page**
+![Login Screen](/screenshots/login.jpg)
+
+**Dashboard/My Courses**
+![My Courses Screen](/screenshots/mycourses.jpg)
+
+**Dashboard/Messages**
+![Messages Screen](/screenshots/messages.png)
+
+**Dashboard/Discussions**
+![Discussions Screen](/screenshots/discussion.jpg)
+
+**Dashboard/User Profile**
+![User Profile Screen](/screenshots/profile.jpg)
+
+**Dashboard/Instructor**
+![Instructor Screen](/screenshots/Instructor.jpg)
+
 ## Resources
 - Demo: <https://demos.creative-tim.com/material-dashboard-angular2/#/dashboard>
 - Download Page: <https://www.creative-tim.com/product/material-dashboard-angular2>
@@ -68,7 +68,6 @@ java -Djava.security.egd=file:/dev/./urandom -jar app.jar
 - Support: <https://www.creative-tim.com/contact-us>
 - Issues: [Github Issues Page](https://github.com/creativetimofficial/material-dashboard-angular2/issues)
 - [Material Kit](https://www.creative-tim.com/product/material-kit?ref=github-mda-free) - For Front End Development
-
 
 ## Licensing
 - Copyright 2018 Creative Tim (https://www.creative-tim.com/)

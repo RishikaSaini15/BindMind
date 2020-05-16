@@ -1,0 +1,162 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header card-header-danger" style = "background: #334d5c">
+                      <h4 class="card-title">Edit Profile</h4>
+                      <p class="card-category">Complete your profile</p>
+                  </div>
+                  <div class="card-body">
+                      <form (ngSubmit)="updateUserProfile()">
+                          <div class="row">
+                              <!--<div class="col-md-5">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Company (disabled)" disabled>
+                                  </mat-form-field>
+                              </div>-->
+                              <div class="col-md-3">
+                                  <!--<mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Username">
+                                  </mat-form-field>-->
+
+                                  <mat-form-field class="example-full-width">
+                                      <label>User Name</label>
+                                    <input matInput
+                                           [(ngModel)]="user.username"
+                                           #name="ngModel"
+                                           name="username"
+                                           type="text"
+                                           disabled>
+                                  </mat-form-field>
+
+
+                              </div>
+                              <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                    <label>Name</label>
+                                  <input matInput
+                                         [(ngModel)]="user.name"
+                                         #name="ngModel"
+                                         name="name"
+                                         type="text"
+                                         required>
+                                </mat-form-field>  
+                                
+                                
+                                
+                                
+                                
+                                
+                                <!--<mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Email address" type="email">
+                                  </mat-form-field>-->
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                      <label>First Name</label>
+                                    <input matInput
+                                           [(ngModel)]="user.first_name"
+                                           #name="ngModel"
+                                           name="first_name"
+                                           type="text"
+                                           required>
+                                  </mat-form-field>  
+                                
+                                
+                                <!--<mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Fist Name" type="text">
+                                </mat-form-field>-->
+                              </div>
+                              <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                      <label>Last Name</label>
+                                    <input matInput
+                                           [(ngModel)]="user.last_name"
+                                           #name="ngModel"
+                                           name="last_name"
+                                           type="text"
+                                           required>
+                                  </mat-form-field> 
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <mat-form-field class="example-full-width">
+                                      <label>Address</label>
+                                    <input matInput
+                                           [(ngModel)]="user.address"
+                                           #name="ngModel"
+                                           name="address"
+                                           type="text"
+                                           required>
+                                  </mat-form-field> 
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                      <label>City</label>
+                                    <input matInput
+                                           [(ngModel)]="user.city"
+                                           #name="ngModel"
+                                           name="city"
+                                           type="text"
+                                           required>
+                                  </mat-form-field> 
+                              </div>
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                      <label>Country</label>
+                                    <input matInput
+                                           [(ngModel)]="user.country"
+                                           #name="ngModel"
+                                           name="country"
+                                           type="text"
+                                           required>
+                                  </mat-form-field> 
+                              </div>
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                      <label>Postal Code</label>
+                                    <input matInput
+                                           [(ngModel)]="user.zipcode"
+                                           #name="ngModel"
+                                           name="zipcode"
+                                           type="text"
+                                           required>
+                                  </mat-form-field> 
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                
+                                <mat-form-field class="example-full-width">
+                                        <label>About Me</label>
+                                  <input matInput
+                                         [(ngModel)]="user.user_description"
+                                         #name="ngModel"
+                                         name="user_description"
+                                         type="text"
+                                         required>
+                                </mat-form-field>
+                                  <!-- <div class="form-group">
+
+                                      <div class="form-group">
+                                          <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
+                                          <textarea class="form-control" rows="5"></textarea>
+                                      </div>
+                                  </div> -->
+                              </div>
+                          </div>
+                          <button mat-raised-button type="submit" class="btn btn-danger pull-right">Update Profile</button>
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

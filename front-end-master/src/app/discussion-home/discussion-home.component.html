@@ -1,0 +1,53 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger" style = "background: #334d5c;">
+            <h4 class="card-title "><b>Discussions</b><a routerLink="../discussion-post" routerLinkActive="active">
+              <button  class="btn btn-success btn-simple btn-lg" style="float: right; ">New Discussion<i class="material-icons">create</i></button>
+            </a></h4>
+            <p class="card-category">Discussions relevant to you..</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                <th>
+                  #
+                </th>
+                <th>
+                  Topic
+                </th>
+                <th>
+                  Posted By
+                </th>
+                <th>
+                  Posted On
+                </th>
+                </thead>
+                <tbody>
+
+
+                <tr *ngFor="let item of discussionList;  index as ind">
+                  <th scope="row">{{ind+1}}</th>
+                  <b><td>{{item.title}}</td></b>
+                  <td>{{item.userID.name}}</td>
+                  <td>{{item.timestamp | date: 'MM-dd-yyyy' }}</td>
+                  <td><a routerLink="../discussion/{{item.postId}}" routerLinkActive="active">
+                    <button  class="btn btn-simple" style="float: right; background: #334d5c"><i class="material-icons">keyboard_arrow_right</i></button>
+                  </a></td>
+                </tr>
+
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+

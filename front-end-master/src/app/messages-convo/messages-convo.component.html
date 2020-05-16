@@ -1,0 +1,60 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger" style = "background: #334d5c;">
+                        <h4 class="card-title ">
+                            <div *ngIf="conversation.user.id==currentStudent.id; else elseBlock">
+                                <i style="font-size: small">{{conversation.recep.name}}</i>
+                            </div>
+                            <ng-template #elseBlock>
+                                <i style="font-size: small">{{conversation.user.name}}</i>
+                            </ng-template>
+                            <br>{{conversation.topic}}
+
+                            <a routerLink="../../messages-home" routerLinkActive="active"><button class="btn btn-simple"  style="float: right; "><i class="material-icons">arrow_back</i></button></a>
+                        </h4>
+                        <p class="card-category">Last refreshed on {{time | date: 'medium'}}</p>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+
+                            <form name="form-signup" (ngSubmit)="f.form.valid && sendMessage()" #f="ngForm" novalidate >
+                                <input type="text" placeholder="Reply..." class="form-control" name="reply" id="reply" [(ngModel)]="message.text" #reply="ngModel" required />
+                                <div class="alert alert-danger" *ngIf="f.submitted && !reply.valid">
+                                    Message cannot empty...
+                                </div>
+                                <button type="submit"  style="float: right" class="btn btn-simple btn-success">Send <i class="material-icons">send</i></button>
+                            </form>
+                            <br>
+                            <br>
+                            <br>
+
+                            <hr>
+                            <div *ngFor="let item of messageList; ">
+                                <div *ngIf="item.user.id==currentStudent.id; else elseBlock">
+                                    <div class="card-header" style=" background-color: #b0bec5; margin-bottom: 5px;"  >
+                                        <b style=" font-size: large;">{{item.text}}</b> <br>
+                                        <i style="font-size: smaller">{{item.timestamp | date: 'medium'}}</i>
+                                    </div>
+                                </div>
+                                <ng-template #elseBlock>
+                                    <div class="card-header" style=" background-color: #68c563; margin-bottom: 5px;"  >
+                                        <i style="font-size: smaller">{{conversation.recep.name}}</i>
+                                        <b style=" font-size: large;">{{item.text}}</b> <br>
+                                        <i style="font-size: smaller">{{item.timestamp | date: 'medium'}}</i>
+                                    </div>
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

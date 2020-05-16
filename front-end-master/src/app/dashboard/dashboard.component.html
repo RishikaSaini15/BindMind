@@ -1,0 +1,108 @@
+<div class="main-content">
+    <div class="alert alert-danger alert-dismissible" *ngIf="errorMessage">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Error!</strong> {{errorMessage}}
+    </div>
+    <div class="alert alert-success alert-dismissible" *ngIf="infoMessage">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Successful!</strong> {{infoMessage}}
+    </div>
+    <div class="row" *ngIf="isInstructor">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-danger" style = "background: #334d5c">
+                    <h4 class="card-title ">All courses</h4>
+                    <p class="card-category">{{currentUser.name}}</p>
+                </div>
+                <div class="card-content table-responsive">
+                    <table class="table table-hover">
+                        <thead class="text-success">
+                        <th>Course ID</th>
+                        <th>Course Name</th>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let course of courseList">
+                            <td>{{course.id}}</td>
+                            <td>{{course.name}}</td>
+
+                            <td class="td-actions text-left">
+                                <button type="button" rel="tooltip" title="" class="btn btn-success btn-simple btn-lg" data-original-title="Edit Task" [routerLink]="['/home/instructor-course-home/',course.id]">
+                                    <i class="material-icons">launch</i>  View
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row"  *ngIf="!isInstructor">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-danger" style = "background: #334d5c">
+                    <h4 class="card-title ">Enrolled Courses</h4>
+                    <p class="card-category">{{currentUser.name}}</p>
+                </div>
+                <div class="card-content table-responsive">
+                    <table class="table table-hover">
+                        <thead class="text-success">
+                        <th>Course ID</th>
+                        <th>Course Name</th>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let course of courseList">
+                            <td>{{course.id}}</td>
+                            <td>{{course.name}}</td>
+
+                            <td class="td-actions text-right">
+                                <button type="button" rel="tooltip" title="" class="btn btn-success btn-simple btn-lg" data-original-title="Edit Task" [routerLink]="['/home/student-course-home/',course.id]">
+                                    <i class="material-icons">launch</i>  View
+                                </button>
+                            </td>
+                            <td class="td-actions">
+                                <button type="button" class="btn btn-danger btn-simple btn-lg" (click)="unEnrollStudent(course)">
+                                    <i class="material-icons">highlight_off</i>  Unenroll me
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-danger" style="background: #ce8282">
+                    <h4 class="card-title ">Available courses</h4>
+                    <p class="card-category">All courses available for enrollment</p>
+                </div>
+                <div class="card-content table-responsive">
+                    <table class="table table-hover">
+                        <thead class="text-success">
+                        <th>Course ID</th>
+                        <th>Course Name</th>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let course of allCourses">
+                            <td>{{course.id}}</td>
+                            <td>{{course.name}}</td>
+
+                            <td class="td-actions text-right">
+                                <button type="button" rel="tooltip" title="" class="btn btn-success btn-simple btn-lg"(click)="open(course)">
+                                    <i class="material-icons">launch</i>  View
+                                </button>
+                            </td>
+                            <td class="td-actions">
+                                <button type="button" class="btn btn-success btn-simple btn-lg" (click)="enrollStudent(course)">
+                                    <i class="material-icons">highlight_off</i>Enroll
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

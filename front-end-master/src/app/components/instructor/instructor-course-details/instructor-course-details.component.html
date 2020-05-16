@@ -1,0 +1,174 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <a href="#pablo">
+                            <img class="img" src="../assets/img/Course.png">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <h6 class="category text-gray">Module Summary</h6>
+                        <div class="card-content">
+                            <p class="category">Assignments for this module</p>
+                            <h3 class="title">{{assignments?.length}}
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-danger" style = "background: #334d5c">
+                        <i class="material-icons">note_add</i>
+                        <h4 class="card-title ">Add new assignment</h4>
+                    </div>
+                    <div class="card-footer">
+                        <div>
+                            <form>
+                                <div class="col-md-12">
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label">Module id: {{moduleId}}</label>
+                                        <input type="text" class="form-control" disabled>
+                                        <span class="material-input"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group form-success label-floating is-empty">
+                                        <label class="control-label">Assignment Name:</label>
+                                        <input type="text" class="form-control" [(ngModel)]="assignment.name" name="assignName">
+                                        <span class="material-input"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group form-success label-floating is-empty">
+                                        <label class="control-label">Assignment Description:</label>
+                                        <input type="text" class="form-control" [(ngModel)]="assignment.description" name="description">
+                                        <span class="material-input"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group form-success label-floating is-empty">
+                                        <label class="control-label">Start Date:</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group form-success label-floating is-empty">
+                                        <mat-form-field>
+                                            <input matInput [matDatepicker]="picker" placeholder="Choose a date" [ngModelOptions]="{standalone: true}" [(ngModel)]="assignment.startDate">
+                                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group form-success label-floating is-empty">
+                                        <label class="control-label">End Date:</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group form-success label-floating is-empty">
+                                        <mat-form-field>
+                                            <input matInput [matDatepicker]="picker1" placeholder="Choose a date" [ngModelOptions]="{standalone: true}" [(ngModel)]="assignment.endDate">
+                                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker1></mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-success pull-right" (click)="addNewAssignment()">Add Assignment</button>
+                                <div class="clearfix"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-danger" style = "background: #334d5c">
+                        <i class="material-icons">note_add</i>
+                        <h4 class="card-title ">Add new material</h4>
+                    </div>
+                    <div class="card-footer">
+                        <div>
+                            <form>
+                                <div class="col-md-12">
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label">Module id: {{moduleId}}</label>
+                                        <input type="text" class="form-control" disabled>
+                                        <span class="material-input"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group form-success label-floating is-empty">
+                                        <label class="control-label">Video title:</label>
+                                        <input type="text" class="form-control" [(ngModel)]="moduleContent.videoTitle" name="assignName">
+                                        <span class="material-input"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group form-success label-floating is-empty">
+                                        <label class="control-label">Video link:</label>
+                                        <input type="text" class="form-control" [(ngModel)]="moduleContent.video" name="description">
+                                        <span class="material-input"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group form-success label-floating is-empty">
+                                        <label class="control-label">Transcript information:</label>
+                                        <input type="text" class="form-control" [(ngModel)]="moduleContent.transcript" name="description">
+                                        <span class="material-input"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="control-label">Upload material:   </label>
+                                    <input type="file" (change)="fileChange($event)" placeholder="Upload file" #file>
+                                </div>
+
+                                <button type="submit" class="btn btn-success pull-right" (click)="addNewMaterial()">Add material</button>
+                                <div class="clearfix"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger" style = "background: #ce8282">
+                        <h4 class="card-title ">Assignment</h4>
+                        <p class="card-category">Available assignments</p>
+                    </div>
+                    <div class="card-content table-responsive">
+                        <table class="table table-hover">
+                            <thead class="text-success">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let assignment of assignments">
+                                <td>{{assignment.id}}</td>
+                                <td>{{assignment.name}}</td>
+                                <td>{{assignment.description}}</td>
+                                <td>{{assignment.startDate | date}}</td>
+                                <td>{{assignment.endDate | date}}</td>
+                                <td class="td-actions left-right">
+                                    <button type="button" rel="tooltip" title="" class="btn btn-success btn-simple btn-lg" data-original-title="Edit Task" [routerLink]="['/home/instructor-assignment-home/',assignment.id]">
+                                        <i class="material-icons">launch</i>  View
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

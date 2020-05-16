@@ -1,0 +1,8 @@
+.col-md-8 {
+  flex: 0 0 85%;
+  max-width: 90%;
+}
+::ng-deep .cdk-overlay-container {
+  position: fixed;
+  z-index: 2000;
+}

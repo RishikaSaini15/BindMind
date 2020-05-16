@@ -1,0 +1,63 @@
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card card-profile">
+        <div class="card-avatar">
+          <a href="#pablo">
+            <img class="img" src="../assets/img/task-icon.png">
+          </a>
+        </div>
+        <div class="content">
+          <h6 class="category text-gray">Assignment Summary</h6>
+          <h4 class="card-title">{{currentAssignment.name}}</h4>
+          <p class="card-content">
+            {{currentAssignment.description}}
+          </p>
+          <form>
+            <div class="row">
+              <div class="col-md-4">
+                <button type="button" class="btn btn-success btn-simple btn-lg" (click)="download(currentAssignment) " *ngIf="currentAssignment.file ? true: false">
+                  <i class="material-icons">cloud_download</i>Download
+                </button>
+              </div>
+              <div class="col-md-4">
+                <input type="file" (change)="fileChange($event)" [disabled]="isGraded" placeholder="Upload file" #file>
+              </div>
+              <div class="col-md-4">
+                <button type="button" class="btn btn-success btn-simple btn-lg" [disabled]="isGraded" (click)="submitAssignment()">
+                  <i class="material-icons">cloud_upload</i>Submit
+                </button>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-header card-header-warning card-header-icon">
+          <div class="card-icon">
+            <i class="material-icons">content_copy</i>
+          </div>
+          <p class="card-category">Assignment grade</p>
+          <h3 class="card-title" *ngIf="currentGrade ? true: false">{{currentGrade.grade}}
+          </h3>
+          <h3 class="card-title" *ngIf="currentGrade ? false: true">Not graded
+          </h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats" *ngIf="currentGrade ? true: false">
+            <i class="material-icons">check</i>{{currentGrade.grade}}
+          </div>
+          <div class="stats" *ngIf="currentGrade ? false: true">
+            <i class="material-icons">access_time</i>Not graded
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

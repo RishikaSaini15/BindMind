@@ -1,0 +1,45 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger" style = "background: #334d5c;">
+            <h4 class="card-title "><b>Create a new message...</b><a routerLink="../messages-home" routerLinkActive="active">
+              <button  class="btn btn-simple" style="float: right; ">Discard<i class="material-icons">delete</i></button>
+            </a></h4>
+          </div>
+          <div class="card-body">
+
+            <form name="form-signup" (ngSubmit)="f.form.valid && createConversation()" #f="ngForm" novalidate >
+
+              <input type="text" placeholder="To: " class="form-control" name="rec" id="rec" [(ngModel)]="recipName" #rec="ngModel" required />
+              <div class="alert alert-danger" *ngIf="f.submitted && !rec.valid">
+                Recipient cannot be empty...
+              </div>
+              <br>
+
+              <input  type="textarea"  placeholder="Subject" class="form-control" name="topic" id="topic" [(ngModel)]="conversation.topic" #topic="ngModel" required />
+              <div class="alert alert-danger" *ngIf="f.submitted && !topic.valid">
+                Topic cannot be empty.
+              </div>
+
+              <br>
+              <input  type="textarea"  placeholder="Write your message here..." class="form-control" name="message" id="message" [(ngModel)]="conversation.firstmessage" #topic="ngModel" required />
+              <div class="alert alert-danger" *ngIf="f.submitted && !topic.valid">
+                Message cannot be empty.
+              </div>
+              <br>
+              <button type="submit" class="btn btn-success btn-simple btn-lg" style="float: right;">
+                Send Message <i class="material-icons">send</i>
+              </button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

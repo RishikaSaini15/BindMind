@@ -1,0 +1,15 @@
+<mat-dialog-content>
+  <div class="videoWrapper">
+    <iframe [src]='safeUrl' frameborder="0" allowfullscreen></iframe>
+  </div>
+</mat-dialog-content>
+
+<hr>
+
+<mat-dialog-actions class="app-dialog-actions">
+  <button type="button" class="btn btn-primary btn-sm" (click)="close()">Close</button>
+  <div class="tim-typo">
+    <h6>
+      <span class="tim-note">TRANSCRIPT: </span>{{transcript}}</h6>
+  </div>
+</mat-dialog-actions>

@@ -25,16 +25,16 @@ Material Dashboard uses a framework built by our friend [Federico - Bootstrap Ma
 ![My Courses Screen](/screenshots/mycourses.jpg)
 
 **Dashboard/Messages**
-![Messages Screen](/screenshots/messages.jpg)
+![Messages Screen](/screenshots/messages.png)
 
 **Dashboard/Discussions**
-![Discussions Screen](/screenshots/discussions.jpg)
+![Discussions Screen](/screenshots/discussion.jpg)
 
 **Dashboard/User Profile**
 ![User Profile Screen](/screenshots/profile.jpg)
 
 **Dashboard/Instructor**
-![Instructor Screen](/screenshots/instructor.jpg)
+![Instructor Screen](/screenshots/Instructor.jpg)
 
 ## Terminal Commands
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0 and angular 4.x.
